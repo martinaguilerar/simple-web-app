@@ -36,7 +36,7 @@ app.get("/", async (req, res) => {
         FROM [production].[products]`);
   
       // Send the result as JSON
-      res.json(result.recordset);
+      res.status(200).json(result.recordset);
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Internal Server Error");
