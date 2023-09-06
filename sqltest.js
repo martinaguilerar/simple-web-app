@@ -33,20 +33,23 @@ async function connectAndQuery() {
         console.log(`${resultSet.recordset.length} rows returned.`);
 
         // output column headers
-        var columns = "";
-        for (var column in resultSet.recordset.columns) {
-            columns += column + ", ";
-        }
-        console.log("%s\t", columns.substring(0, columns.length - 2));
+        // var columns = "";
+        // for (var column in resultSet.recordset.columns) {
+        //     columns += column + ", ";
+        // }
+        // console.log("%s\t", columns.substring(0, columns.length - 2));
 
         // ouput row contents from default record set
-        resultSet.recordset.forEach(row => {
-            console.log("%s\t%s", row.product_name, row.brand_id);
-        });
+        // resultSet.recordset.forEach(row => {
+        //     console.log("%s\t%s", row.product_name, row.brand_id);
+        // });
 
         // close connection only when we're certain application is finished
         poolConnection.close();
+        return resultSet;
     } catch (err) {
         console.error(err.message);
     }
 }
+
+module.exports = { connectAndQuery };
