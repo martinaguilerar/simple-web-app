@@ -21,7 +21,7 @@ app.listen(8080, () => {
   console.log(`Server is up and running on 8080 ...`);
 });
 
-app.get("/results", async (req, res) => {
+app.get("/", async (req, res) => {
     try {
       // Create a SQL Server connection pool
       const pool = await sql.connect(config);
