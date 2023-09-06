@@ -34,7 +34,8 @@ app.get("/", async (req, res) => {
             ,[model_year]
             ,[list_price]
         FROM [production].[products]`);
-  
+      res.setHeader("Cache-Control", "no-store");
+      res.setHeader("Pragma", "no-cache");
       // Send the result as JSON
       res.status(200).json(result.recordset);
     } catch (err) {
