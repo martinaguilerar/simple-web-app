@@ -17,8 +17,8 @@ const config = {
     }
 }
   
-app.listen(80, () => {
-  console.log(`Server is up and running on 80 ...`);
+app.listen(8081, () => {
+  console.log(`Server is up and running on 8081 ...`);
 });
 
 app.get("/results", async (req, res) => {
